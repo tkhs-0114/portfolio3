@@ -13,7 +13,6 @@ function App() {
       const rect = thisRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      // THISのdivが画面内に表示されているかチェック
       const isInViewport = rect.top < viewportHeight && rect.bottom > 0;
 
       setIsActive(isInViewport);
@@ -30,22 +29,28 @@ function App() {
   return (
     <>
       <div
-        className="min-h-screen flex flex-col items-center justify-center gap-4"
+        className="min-h-screen flex flex-col items-center justify-center text-center gap-4"
         style={{
-          backgroundImage: "url('./background.png')",
+          backgroundImage: "url('./back4.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <h1 className="text-3xl md:text-8xl text-white font-bold mt-[30vh]">
+        <h1 className="text-3xl md:text-8xl text-gray-900 font-bold mt-[30vh]">
           Welcome to my Portfolio
         </h1>
-        <p className="text-2xl text-white mt-[40vh] animate-bounce">
+        <p className="text-2xl text-gray-900 mt-[40vh] animate-bounce">
           ↓↓↓ Scroll ↓↓↓
         </p>
         <div className="h-[50vh]" />
         <div ref={thisRef} className="h-screen" />
         <div className="h-[100vh]" />
+        <p className="text-3xl text-gray-100 mt-[40vh] animate-bounce bg-black/50 p-4 rounded-lg">
+          COMING SOON...
+          <br />
+          過去のプロジェクト等をここに表示する予定です。
+        </p>
+        <div className="h-[30vh]" />
       </div>
       <div
         className={`fixed top-0 left-0 w-full h-screen z-10 ${isActive ? "" : "pointer-events-none"}`}
@@ -63,11 +68,11 @@ function App() {
               </div>
               <div>
                 <p className="text-lg md:text-2xl">
-                  <p className="text-2xl md:text-4xl inline">私</p>
+                  <span className="text-2xl md:text-4xl">私</span>
                   は情報系大学の3年生です。Webアプリから競技プログラミング、マイコンや自作CPUの設計など幅広い分野に興味があり、日々勉強しています。
                 </p>
                 <p className="text-lg md:text-2xl">
-                  <p className="text-2xl md:text-4xl inline">ま</p>
+                  <span className="text-2xl md:text-4xl">ま</span>
                   た、ハッカソンやICPC,ICTSC等のコンテストにも積極的に参加しています。10月はJPHACK2025,12月にはICTSCの二次予選に参加予定です。
                 </p>
               </div>
@@ -83,14 +88,13 @@ function App() {
                 </Window>
                 <Manager>
                   <Manager>
-                    <Window>Window 6</Window>
+                    <Window>
+                      <div className="w-full h-full flex items-center justify-center p-1 md:p-10">
+                        <img src="./buncyou-1.gif" className="w-full " />
+                      </div>
+                    </Window>
                   </Manager>
-                  <Window>
-                    <img
-                      src="./cbonsai.gif"
-                      className="w-full h-full object-cover"
-                    />
-                  </Window>
+                  <Window></Window>
                 </Manager>
               </Manager>
               <Window>
