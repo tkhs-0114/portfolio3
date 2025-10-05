@@ -1,73 +1,29 @@
-# React + TypeScript + Vite
+# ポートフォリオ3
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+https://tkhs-0114.github.io/portfolio3/
 
-Currently, two official plugins are available:
+## 説明
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+夏休みに参加した経験を活かして作成した3個目のポートフォリオサイト。2個目のポートフォリオはUbuntuっぽいデザインを意識して作ったので今回はHyprland風（？なのかな？）のデザインで作成してみた。が、正直デザイン的にはイマイチ
 
-## React Compiler
+## よかった点
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- StoryBookを活用してコンポーネントを作成できた
+- FlexBoxを使用した。
+- 前回（ポートフォリオ2）の反省点だったマージ時の自動デプロイを実装できた
 
-## Expanding the ESLint configuration
+![StoryBook](./screenshots/story.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 反省点
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+- GitHubFlowで開発を行ったが、マージ時に自動デプロイされてしまうのでGitFlowの方が相性が良さそうだと感じた。
+- FlexBoxを使うべき点とそうじゃない点をしっかりと区別する必用があると感じた。
+- デザインがとにかくイマイチ。タイル型ウィンドウマネージャー風を意識して作成したが、一画面に情報を詰め込みすぎで見にくい。
+- アニメーションをもっと活用できるようになりたい。タイル型WMが開く時は順番に開いていく求めていたアニメーションを実装することができたが、閉じる時はその逆順のようなアニメーションを作りたかった。（タイル型をコンポーネントで作成し再帰的な処理にしているのがそもそもの間違いな気がする）
+- ポートフォリオ提出日（2025/10/05）時点で未完成な点。もっと高速に開発できるようになりたい。
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 総括
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+- 前回（ポートフォリオ2）の反省点にもあったUXをまったく改善できていないのは良くない
+- StoryBookや自動デプロイ等、開発の経験としてはとても学びになった。
+- **次に生かしたい**
