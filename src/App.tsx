@@ -32,7 +32,7 @@ function App() {
       <div
         className="min-h-screen flex flex-col items-center justify-center gap-4"
         style={{
-          backgroundImage: "url('/background.png')",
+          backgroundImage: "url('./background.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -56,7 +56,7 @@ function App() {
               <h1 className="text-4xl font-bold underline">Hello world!</h1>
               <div className="flex items-center gap-4">
                 <img
-                  src="/icon.jpg"
+                  src="./icon.jpg"
                   className="w-16 md:w-32 h-16 md:h-32 rounded-full"
                 />
                 <h1 className="text-5xl font-bold ">tkhs-0114</h1>
@@ -87,7 +87,7 @@ function App() {
                   </Manager>
                   <Window>
                     <img
-                      src="/cbonsai.gif"
+                      src="./cbonsai.gif"
                       className="w-full h-full object-cover"
                     />
                   </Window>
